@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja" itemscope itemtype="http://schema.org/Blog">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <$HeadSectionCommon$>
+  <meta name="description" content="<$BlogDescription ESCAPE$>" />
+  <$OGP$>
+  <link rel="alternate" media="handheld" type="application/xhtml+xml" href="<$BlogMobileUrl$>" />
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <IfFoafUrl><link rel="meta" type="application/rdf+xml" title="FOAF" href="<$FoafUrl$>" /></IfFoafUrl>
+  <title><$BlogTitle ESCAPE$></title>
+  <!--[if lt IE 9]>
+  <script src="<$PartsBaseUrl$>/js/html5.js"></script>
+  <![endif]-->
+  <script src="<$PartsBaseUrl$>/js/usr/import.js"></script>
+</head>
+<body class="default_2012 page-index sidebar-right">
+
+  <$BlogHeader$>
+
+  <div id="wrapper">
+
+    <div id="container">
+
+      <!-- ブログタイトル、説明 -->
+      <header id="blog-header"<IfBlogHeaderImageUrl> class="show-image<IfBlogHeaderHideText> hide-text</IfBlogHeaderHideText>"</IfBlogHeaderImageUrl>>
+          <div id="blog-header-inner">
+              <h1 id="blog-title"><a href="<$BlogUrl$>"><$BlogTitle ESCAPE$></a></h1>
+              <p id="blog-description"><$BlogDescription$></p>
+          </div>
+          <IfBlogHeaderImageUrl><img src="<$BlogHeaderImageUrl$>" id="blog-header-image"></IfBlogHeaderImageUrl>
+          <UnlessBlogHeaderImageUrl><div id="blog-header-image"></div></UnlessBlogHeaderImageUrl>
+          <$MenuList$>
+      </header>
+      <!-- /ブログタイトル、説明 -->
+
+      <div id="content">
+
+        <div id="main" class="column">
+          <div id="main-inner">
+
+            <$MessageBoard$>
+
+            <!-- google_ad_section_start -->
+            <IndexArticlesLoop>
+
+            <$TrackBackAutoDiscovery$>
+            <!-- 記事全体 -->
+            <article class="article<IfFirstArticle> first-article</IfFirstArticle><IfLastArticle> last-article</IfLastArticle>" itemscope itemtype="http://schema.org/BlogPosting">
+              <div class="article-inner">
+
+                <!-- 記事ヘッダー、記事タイトル -->
+                <header class="article-header">
+                  <h1 class="article-title" itemprop="name">
+                    <a href="<$ArticlePermalink$>" itemprop="url"><$ArticleTitle ESCAPE$></a>
+                  </h1>
+                  <p class="article-date">
+                    <time datetime="<$ArticleDateISO8601$>" itemprop="datePublished"><$ArticleDate$> <$ArticleTime$></time><IfArticleRating> <span class="article-rating"><$ArticleRatingIcon$></span></IfArticleRating>
+                  </p>
+                </header>
+                <!-- /記事ヘッダー、記事タイトル -->
+
+                <!-- 記事本文 -->
+                <div class="article-body">
+                  <div class="article-body-inner">
+                  <$ArticleDescription ESCAPE$><IfArticleDescription> ...</IfArticleDescription>
+                  </div>
+                </div>
+                <!-- /記事本文 -->
+
+                <div class="article-first-image">
+                  <SetVar ThumbnailHeight>210</SetVar><SetVar ThumbnailWidth>210</SetVar>
+                  <IfArticleCoverImage><a href="<$ArticlePermalink$>" itemprop="url"><img src="<$ArticleCoverImageThumbnail$>" /></a></IfArticleCoverImage>
+                </div>
+
+              </div><!-- /#article-inner -->
+            </article>
+            <!-- /記事全体 -->
+
+            <IfFirstArticle><$Advertise$></IfFirstArticle>
+
+            </IndexArticlesLoop>
+            <!-- google_ad_section_end -->
+
+            <!-- ページ送り -->
+            <SetVar NavigatorType>2</SetVar>
+            <SetVar NavigatorPrevPageText>&laquo;</SetVar>
+            <SetVar NavigatorNextPageText>&raquo;</SetVar>
+            <$IndexNavigator$>
+            <!-- /ページ送り -->
+
+          </div><!-- /#main-inner -->
+        </div><!-- /#main -->
+
+        <!-- サイドバー -->
+        <aside id="sidebar" class="column">
+        <div id="sidebar-inner">
+        <$PluginList_A$>
+        <$PluginList_B$>
+        </div>
+        <$LDServices$>
+        </aside>
+        <!-- /サイドバー -->
+
+        <p class="to-pagetop"><a href="#">↑このページのトップヘ</a></p>
+
+      </div><!-- /#content -->
+
+    </div><!-- /#container -->
+
+    <!-- ブログのフッター -->
+    <footer id="blog-footer">
+      <$BlogFooter$>
+    </footer>
+    <!-- /ブログのフッター -->
+
+  </div><!-- /#wrapper -->
+
+</body>
+</html>
